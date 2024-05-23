@@ -52,9 +52,9 @@ function getVipSymbol(t) {
 }
 
 async function renderUser(res, user) {
-    const { id, screen_name, statuses_count, followers_count, profile_image_url, verified_detail, friends_count, status_total_counter } = user;
+    const { id, screen_name, statuses_count, followers_count, avatar_large, verified_detail, friends_count, status_total_counter } = user;
     const card = new Card();
-    await card.setAvatar(profile_image_url);
+    await card.setAvatar(avatar_large);
     card.setTitle(screen_name);
     card.setLink(`https://weibo.com/u/${id}`);
 
@@ -72,7 +72,7 @@ async function renderUser(res, user) {
     card.addStat('粉丝', followers_count, `https://weibo.com/u/page/follow/${id}?relate=fans`);
     card.addStat('关注', friends_count, `https://weibo.com/u/page/follow/${id}?relate=`);
     card.addStat('转评赞', status_total_counter.total_cnt);
-    card.addStat('微博数', statuses_count);
+    card.addStat('微博数', statuses_count, `https://weibo.com/u/${id}?tabtype=feed`);
 
     let svg = card.render();
     res.setHeader('Content-Type', 'image/svg+xml');
