@@ -2,11 +2,17 @@ const { downloadImage } = require('./tool');
 
 class Card {
     constructor() {
-        this.titleColor = '#E79114';
-        this.subColor = '#6A7C96';
-        this.statsColor = '#363636';
-        this.backgroundColor = '#FFF';
-        this.font = "'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif";
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            this.titleColor = '#FFF';
+            this.subColor = '#AAB1C0';
+            this.statsColor = '#C4C4C4';
+            this.backgroundColor = '#363636';
+        } else {
+            this.titleColor = '#E79114';
+            this.subColor = '#6A7C96';
+            this.statsColor = '#363636';
+            this.backgroundColor = '#FFF';
+        }
 
         this.width = 360;
         this.height = 180;
