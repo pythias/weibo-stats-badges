@@ -1,12 +1,12 @@
-import { getWeiboUserInfo } from '../src/weibo.js';
-import { renderError, renderUser } from '../src/render.js';
-import { IncomingMessage, ServerResponse } from 'http';
+const { getWeiboUserInfo } = require('../src/weibo');
+const { renderError, renderUser } = require('../src/render');
+const { IncomingMessage, ServerResponse } = require('http');
 
 /**
  * @param {IncomingMessage} req
  * @param {ServerResponse} res
  */
-export default async (req, res) => {
+module.exports = async (req, res) => {
     const uid = req.query.uid;
     const userInfo = await getWeiboUserInfo(uid);
     if (userInfo.error) {

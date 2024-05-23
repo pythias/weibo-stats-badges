@@ -1,5 +1,3 @@
-import { downloadImage } from './tool.js';
-
 class Card {
     constructor() {
         if (global.matchMedia && global.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -56,9 +54,8 @@ class Card {
         });
     }
 
-    async setAvatar(avatar) {
-        const downloaded = await downloadImage(avatar);
-        this.avatar = `data:image/png;base64,${downloaded.toString('base64')}`;
+    setAvatar(avatar) {
+        this.avatar = avatar;
     }
 
     renderStyle() {

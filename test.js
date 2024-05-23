@@ -21,7 +21,7 @@ const user = {
     verified_level: 3,
     verified_type: 0,
     verified_type_ext: 1,
-    profile_image_url: 'https://tvax2.sinaimg.cn/crop.0.0.512.512.180/6923c793ly8gyan1lr4yxj20e80e8mzb.jpg?KID=imgbed,tva&Expires=1716212215&ssig=%2BDeYSD5xyp'
+    avatar_large: 'https://tvax2.sinaimg.cn/crop.0.0.512.512.180/6923c793ly8gyan1lr4yxj20e80e8mzb.jpg?KID=imgbed,tva&Expires=1716212215&ssig=%2BDeYSD5xyp'
 };
 
 // 模拟响应对象
