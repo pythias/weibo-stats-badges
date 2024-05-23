@@ -71,6 +71,11 @@ async function renderUser(res, user) {
     }
     card.setSubTitle(verified_reason);
 
+    let vipSymbol = getVipSymbol(user);
+    if (vipSymbol && icons.hasOwnProperty(vipSymbol)) {
+        card.setIcon(icons[vipSymbol]);
+    }
+
     card.addStat('粉丝', followers_count, `https://weibo.com/u/page/follow/${id}?relate=fans`);
     card.addStat('关注', friends_count, `https://weibo.com/u/page/follow/${id}?relate=`);
     card.addStat('转评赞', status_total_counter.total_cnt);
