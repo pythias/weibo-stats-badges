@@ -1,6 +1,6 @@
-const Card = require('./card');
-const { icons } = require('./icons');
-const { makeBadge } = require('badge-maker');
+import { Card } from './card.js';
+import { icons } from './icons';
+import { makeBadge } from 'badge-maker';
 
 /**
  * 

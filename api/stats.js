@@ -1,6 +1,6 @@
-const getWeiboUserInfo = require('../src/weibo');
-const { renderBadge } = require('../src/render');
-const { IncomingMessage, ServerResponse } = require('http');
+import { getWeiboUserInfo } from '../src/weibo.js';
+import { renderError, renderBadge } from '../src/render.js';
+import { IncomingMessage, ServerResponse } from 'http';
 
 /**
  * @param {IncomingMessage} req

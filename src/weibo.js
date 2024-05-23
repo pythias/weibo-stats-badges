@@ -1,4 +1,4 @@
-const axios = require('axios');
+import axios from 'axios';
 
 async function getWeiboUserInfo(uid) {
   const source = process.env.WEIBO_APP_KEY;
@@ -14,4 +14,4 @@ async function getLastWeibo(uid) {
     return response.data;
 }
 
-module.exports = getWeiboUserInfo;
+module.exports = { getWeiboUserInfo, getLastWeibo };

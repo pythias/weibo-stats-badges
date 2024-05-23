@@ -1,8 +1,8 @@
-const { downloadImage } = require('./tool');
+import { downloadImage } from './tool.js';
 
 class Card {
     constructor() {
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        if (global.matchMedia && global.matchMedia('(prefers-color-scheme: dark)').matches) {
             this.titleColor = '#FFF';
             this.subColor = '#AAB1C0';
             this.statsColor = '#C4C4C4';
@@ -164,4 +164,4 @@ class Card {
     }
 }
 
-module.exports = Card;
+module.exports = { Card };
